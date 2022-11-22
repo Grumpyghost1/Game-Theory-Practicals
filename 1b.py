@@ -1,0 +1,23 @@
+import nashpy as nash 
+import numpy as np
+
+print("Enter the payoff on strategy 1,1 : ") 
+a1=int(input("\nplayer 1 : ")) 
+a2=int(input("\nplayer 2 : "))
+print("Enter the payoff on strategy 1,2 : ") 
+b1=int(input("\nplayer 1 : ")) 
+b2=int(input("\nplayer 2 : "))
+print("Enter the payoff on strategy 2,1 : ") 
+c1=int(input("\nplayer 1 : ")) 
+c2=int(input("\nplayer 2 : "))
+print("Enter the payoff on strategy 2,2 : ") 
+d1=int(input("\nplayer 1 : ")) 
+d2=int(input("\nplayer 2 : "))
+A=np.array([[a1,b1],[c1,d1]]) 
+B=np.array([[a2,b2],[c2,d2]]) 
+game=nash.Game(A,B) 
+print("Given Game :\n") 
+print(game)
+print("\nNash Equilibrium  :\n") 
+ne=game.support_enumeration() 
+print(list(ne))
